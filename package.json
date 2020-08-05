@@ -2,7 +2,7 @@
   "name": "forum",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://9e92d7f53e7f.ngrok.io/",
+  "proxy": "http://ec2-18-191-193-201.us-east-2.compute.amazonaws.com:8080/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
