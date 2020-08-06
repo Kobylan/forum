@@ -3,6 +3,7 @@ import Icon from "../Icon";
 import Link from "../Link";
 import TimeAgo from "react-timeago/lib";
 import { getTime } from "../getTime";
+import ReactHtmlParser from "react-html-parser";
 
 const Card = ({ post }) => {
   return (
@@ -14,7 +15,7 @@ const Card = ({ post }) => {
         <Link title="See more" className="more" link={"/post/" + post.id} />
       </div>
       <div className="font-size-20 font-weight-400 pv-5">{post.title}</div>
-      <div className="pv-5">{post.content}</div>
+      <div className="pv-5">{ReactHtmlParser(post.content)}</div>
       <div className="d-flex mt-10">
         <div className="pr-15 d-flex color-dark-gray-opacity-5 align-items-start">
           <Icon

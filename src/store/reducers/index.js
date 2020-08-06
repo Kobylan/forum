@@ -9,6 +9,7 @@ import { categoryReducer } from "./Category";
 import { profileReducer } from "./Profile/profileReducer";
 import { myPostReducer } from "./Profile/posts";
 import { myCommentsReducer } from "./Profile/commenst";
+import { commentariesReducer } from "./Commentaries";
 
 export const rootReducer = combineReducers({
   post: postReducer,
@@ -21,4 +22,6 @@ export const rootReducer = combineReducers({
   myProfile: profileReducer,
   myComments: myCommentsReducer,
   myPost: myPostReducer,
+  commentaries: commentariesReducer,
+
 });

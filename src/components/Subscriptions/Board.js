@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import { useHistory } from "react-router-dom";
-import { Join, Leave } from "../../store/actions/JoinOrLeave";
+import { Join, Leave } from "../../store/actions/Board";
 
 const Board = ({ board }) => {
   const [subscribed, setSubscribed] = useState(board.is_subscribed);

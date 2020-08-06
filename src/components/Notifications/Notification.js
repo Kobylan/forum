@@ -20,6 +20,8 @@ const Notification = ({ notification, setActive }) => {
           />
         </div>
       );
+    default:
+      return <div />;
   }
 };
 

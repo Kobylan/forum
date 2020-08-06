@@ -14,7 +14,7 @@ import superscript from "../../assets/icons/superscript.svg";
 import image from "../../assets/icons/image.svg";
 import { useParams, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { addPost } from "../../store/actions/AddPost";
+import { addPost } from "../../store/actions/Posts";
 const CreatePost = () => {
   const history = useHistory();
   const { id } = useParams();
