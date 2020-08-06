@@ -1,9 +1,11 @@
+import { URI } from "../../URI";
+
 export const getPopularPosts = () => {
   return (dispatch) => {
     dispatch({
       type: "GET_POSTS_FETCHING",
     });
-    return fetch("/api/v1/posts")
+    return fetch(URI + "/api/v1/posts")
       .then((response) => response.json())
       .then((data) => {
         dispatch({ type: "GET_POSTS_SUCCESS", payload: data });
@@ -21,7 +23,7 @@ export const getSubscriptionsPosts = () => {
     dispatch({
       type: "GET_POSTS_FETCHING",
     });
-    return fetch("/api/v1/posts/subscriptions")
+    return fetch(URI + "/api/v1/posts/subscriptions")
       .then((response) => response.json())
       .then((data) => {
         dispatch({ type: "GET_POSTS_SUCCESS", payload: data });

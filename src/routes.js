@@ -5,6 +5,7 @@ const Routes = () => {
   const Feed = lazy(() => import("./pages"));
   const SignIn = lazy(() => import("./pages/signIn"));
   const Post = lazy(() => import("./pages/Post"));
+  const Board = lazy(() => import("./pages/Board"));
   return (
     <Suspense fallback={""}>
       <Switch>
@@ -19,6 +20,12 @@ const Routes = () => {
         </Route>
         <Route exact path="/post/:id">
           <Post />
+        </Route>
+        <Route exact path="/board">
+          <Redirect to="/" />
+        </Route>
+        <Route exact path="/board/:id">
+          <Board />
         </Route>
       </Switch>
     </Suspense>

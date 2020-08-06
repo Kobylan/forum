@@ -44,7 +44,7 @@ const SignIn = () => {
             title="Sign in"
             uppercase={true}
             onClick={() => {
-              window.location.href = "/api/v1/login";
+              window.location.href = "http://18.191.193.201:8080/api/v1/login";
             }}
           />
           <div className="font-style-monospace font-size-12 mv-20">or</div>
