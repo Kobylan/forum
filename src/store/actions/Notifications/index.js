@@ -1,21 +1,21 @@
 import { URI } from "../../URI";
 
-export const getCategories = () => {
+export const getNotifications = () => {
   return (dispatch) => {
     dispatch({
-      type: "GET_CATEGORIES_FETCHING",
+      type: "GET_NOTIFICATIONS_FETCHING",
     });
-    return fetch(URI + "/api/v1/categories")
+    return fetch(URI + "/api/v1/notifications")
       .then((response) => response.json())
       .then((data) => {
         dispatch({
-          type: "GET_CATEGORIES_SUCCESS",
+          type: "GET_NOTIFICATIONS_SUCCESS",
           payload: data,
         });
       })
       .catch((error) => {
         dispatch({
-          type: "GET_CATEGORIES_ERROR",
+          type: "GET_NOTIFICATIONS_ERROR",
           error: error,
         });
       });

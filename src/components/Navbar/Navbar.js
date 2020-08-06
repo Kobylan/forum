@@ -3,6 +3,7 @@ import Breadcrumbs from "../Breadcrumbs";
 import Logo from "../../assets/images/logo.png";
 import Icon from "../Icon";
 import { useHistory } from "react-router-dom";
+import Notifications from "../Notifications";
 const Navbar = () => {
   const history = useHistory();
   return (
@@ -27,10 +28,10 @@ const Navbar = () => {
             className="mr-20 cursor-pointer"
             onClick={() => history.push("/")}
           />
-          <Breadcrumbs />
+          {/*<Breadcrumbs />*/}
         </div>
         <div className="d-flex align-items-center">
-          <Icon name="time" className="pg-20 br-1 b-color-white" />
+          <Notifications />
           <div className="text-hover cursor-pointer ml-20">Kobylan Gaziz</div>
           <Icon
             onClick={() => {

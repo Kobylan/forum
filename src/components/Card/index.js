@@ -17,11 +17,27 @@ const Card = ({ post }) => {
       <div className="pv-5">{post.content}</div>
       <div className="d-flex mt-10">
         <div className="pr-15 d-flex color-dark-gray-opacity-5 align-items-start">
-          <Icon name="thumb-up" fill="rgba(204, 204, 204, 0.5)" size={15} />
+          <Icon
+            name="thumb-up"
+            fill={
+              post.reaction === 1
+                ? "rgb(153, 102, 255)"
+                : "rgba(204, 204, 204, 0.5)"
+            }
+            size={15}
+          />
           <div className="mg-5">{post.likes} likes</div>
         </div>
         <div className="pr-15 d-flex color-dark-gray-opacity-5 align-items-start">
-          <Icon name="thumb-down" fill="rgba(204, 204, 204, 0.5)" size={15} />
+          <Icon
+            name="thumb-down"
+            fill={
+              post.reaction === 2
+                ? "rgb(153, 102, 255)"
+                : "rgba(204, 204, 204, 0.5)"
+            }
+            size={15}
+          />
           <div className="mg-5">{post.dislikes} dislikes</div>
         </div>
         <div className="pr-15 d-flex color-dark-gray-opacity-5 align-items-start">

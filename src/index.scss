@@ -389,6 +389,15 @@ body {
   &-purple {
     color: rgb(153, 102, 255);
   }
+  &-green {
+    color: rgb(0, 255, 213);
+  }
+  &-red {
+    color: rgb(255, 51, 119);
+  }
+  &-yellow {
+    color: rgb(255, 255, 102);
+  }
 }
 
 .cursor {
@@ -420,6 +429,9 @@ body {
     &-1 {
       border-bottom: solid 1px;
     }
+  }
+  &-none {
+    border: none;
   }
   &-color {
     &-white {
@@ -453,6 +465,12 @@ body {
 .position {
   &-fixed {
     position: fixed;
+  }
+  &-absolute {
+    position: absolute;
+  }
+  &-relative {
+    position: relative;
   }
 }
 
@@ -527,6 +545,18 @@ body {
       &:hover {
         transition: background-color 0.2s ease-in-out;
         background-color: rgb(204, 204, 204);
+      }
+    }
+  }
+  &-dark {
+    background-color: rgb(13, 13, 13);
+    &-opacity {
+      &-75 {
+        background-color: rgba(26, 26, 26, 0.75);
+
+        &-hover:hover {
+          background-color: rgb(13, 13, 13);
+        }
       }
     }
   }

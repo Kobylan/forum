@@ -326,6 +326,15 @@ body {
 .color-purple {
   color: #9966ff;
 }
+.color-green {
+  color: #00ffd5;
+}
+.color-red {
+  color: #ff3377;
+}
+.color-yellow {
+  color: #ffff66;
+}
 
 .cursor-pointer {
   cursor: pointer;
@@ -345,6 +354,9 @@ body {
 }
 .bb-1 {
   border-bottom: solid 1px;
+}
+.b-none {
+  border: none;
 }
 .b-color-white {
   border-color: rgba(255, 255, 255, 0.15);
@@ -370,6 +382,12 @@ body {
 
 .position-fixed {
   position: fixed;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-relative {
+  position: relative;
 }
 
 .card {
@@ -436,6 +454,15 @@ body {
 .bg-white-gray:hover {
   transition: background-color 0.2s ease-in-out;
   background-color: #cccccc;
+}
+.bg-dark {
+  background-color: #0d0d0d;
+}
+.bg-dark-opacity-75 {
+  background-color: rgba(26, 26, 26, 0.75);
+}
+.bg-dark-opacity-75-hover:hover {
+  background-color: #0d0d0d;
 }
 .bg-purple {
   background-color: #9966ff;
