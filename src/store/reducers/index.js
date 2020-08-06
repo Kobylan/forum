@@ -3,6 +3,7 @@ import { postsReducer } from "./Posts";
 import { categoriesReducer } from "./Categories";
 import { subscriptionsReducer } from "./Subscriptions";
 import { postReducer } from "./Post";
+import { categoryReducer } from "./Category";
 import { boardReducer } from "./Board";
 import { notificationsReducer } from "./Notifications";
 
@@ -11,6 +12,7 @@ export const rootReducer = combineReducers({
   posts: postsReducer,
   categories: categoriesReducer,
   subscriptions: subscriptionsReducer,
+  category: categoryReducer,
   board: boardReducer,
   notifications: notificationsReducer,
 });
