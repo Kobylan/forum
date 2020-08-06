@@ -12,7 +12,7 @@ import link from "./icons/link.svg";
 import strikethrough from "./icons/strikethrough.svg";
 import superscript from "./icons/superscript.svg";
 import image from "./icons/image.svg";
-const Createpost = (boar_id) => {
+const Createpost = (boar_id, board_name) => {
   const [editorState, setEditorState] = React.useState(() =>
     EditorState.createEmpty()
   );
@@ -36,7 +36,7 @@ const Createpost = (boar_id) => {
   return (
     <div className="w-100 max-width-800">
       <div className="create-post-title font-size-28 ">Create post</div>
-      <div className="font-size-20 mb-20">Category name placeholder</div>
+      <div className="font-size-20 mb-20">{board_name}</div>
       <div
         className="d-flex flex-column p-10 "
         style={{
