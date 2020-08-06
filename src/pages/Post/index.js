@@ -8,6 +8,7 @@ import "./index.scss";
 import { DislikePost, LikePost, getPost } from "../../store/actions/Posts";
 import Commentaries from "../../components/Commentaries";
 import Button from "../../components/Button";
+import Comment from "../../components/Comment";
 const Board = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -101,7 +102,7 @@ const Board = () => {
           Commentaries
         </div>
         {post.data.comments.length > 0 ? (
-          <Commentaries commentaries={post.data.comments} />
+          post.data.comments.map((e) => <Comment comment={e} />)
         ) : (
           <div className="d-flex w-100 justify-content-center mt-20">
             No comments yet

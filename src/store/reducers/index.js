@@ -6,6 +6,9 @@ import { postReducer } from "./Post";
 import { boardReducer } from "./Board";
 import { notificationsReducer } from "./Notifications";
 import { categoryReducer } from "./Category";
+import { profileReducer } from "./Profile/profileReducer";
+import { myPostReducer } from "./Profile/posts";
+import { myCommentsReducer } from "./Profile/commenst";
 import { commentariesReducer } from "./Commentaries";
 
 export const rootReducer = combineReducers({
@@ -16,5 +19,9 @@ export const rootReducer = combineReducers({
   board: boardReducer,
   notifications: notificationsReducer,
   category: categoryReducer,
+  myProfile: profileReducer,
+  myComments: myCommentsReducer,
+  myPost: myPostReducer,
   commentaries: commentariesReducer,
+
 });

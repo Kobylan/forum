@@ -9,6 +9,7 @@ const Routes = () => {
   const Board = lazy(() => import("./pages/Board"));
   const Category = lazy(() => import("./pages/Category"));
   const CreatePost = lazy(() => import("./pages/CreatePost"));
+  const Profile = lazy(() => import("./pages/Profile"));
   return (
     <Suspense fallback={""}>
       <Switch>
@@ -38,6 +39,9 @@ const Routes = () => {
         </Route>
         <Route exact path="/edit-post/:id">
           <EditPost />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Switch>
     </Suspense>
