@@ -1,0 +1,13 @@
+.category {
+  &-item {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+    width: 49%;
+    height: 60px;
+    background-color: rgb(41 41 41);
+  }
+}

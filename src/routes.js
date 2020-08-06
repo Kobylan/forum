@@ -1,11 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import { Redirect, Switch, Route } from "react-router-dom";
+import EditPost from "./pages/EditPost";
 
 const Routes = () => {
   const Feed = lazy(() => import("./pages"));
   const SignIn = lazy(() => import("./pages/signIn"));
   const Post = lazy(() => import("./pages/Post"));
   const Board = lazy(() => import("./pages/Board"));
+  const Category = lazy(() => import("./pages/Category"));
+  const CreatePost = lazy(() => import("./pages/CreatePost"));
   return (
     <Suspense fallback={""}>
       <Switch>
@@ -26,6 +29,15 @@ const Routes = () => {
         </Route>
         <Route exact path="/board/:id">
           <Board />
+        </Route>
+        <Route exact path="/category/:id">
+          <Category />
+        </Route>
+        <Route exact path="/create-post/:id">
+          <CreatePost />
+        </Route>
+        <Route exact path="/edit-post/:id">
+          <EditPost />
         </Route>
       </Switch>
     </Suspense>

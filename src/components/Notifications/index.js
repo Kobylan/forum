@@ -21,7 +21,7 @@ const Notifications = () => {
         <div className="d-flex justify-content-between align-items-center">
           <Icon name="time" onClick={() => setActive(!active)} />
           <div className="color-yellow font-size-12 ml-5">
-            {notifications.data.length}
+            {notifications.data?.length}
           </div>
         </div>
         <div
@@ -30,7 +30,7 @@ const Notifications = () => {
           }`}
           style={{ top: 50, right: 0, width: 300 }}
         >
-          {notifications.data.length > 0 ? (
+          {notifications.data?.length > 0 ? (
             newPosts.length > 0 && (
               <div className="p-15 bb-1 w-100">
                 <div className="text-uppercase font-style-monospace text-align-center bb-1">

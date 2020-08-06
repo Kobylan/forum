@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 import { getPost } from "../../store/actions/Post";
@@ -8,8 +8,10 @@ import Icon from "../../components/Icon";
 import "./index.scss";
 import { Dislike, Like } from "../../store/actions/Reaction";
 import Commentaries from "../../components/Commentaries";
+import Button from "../../components/Button";
 const Board = () => {
   const { id } = useParams();
+  const history = useHistory();
   const post = useSelector((store) => store.post);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,7 +24,17 @@ const Board = () => {
   return (
     !post.isFetching && (
       <div className="d-flex flex-column w-100">
-        <div className="font-size-40 pv-20">{post.data.title}</div>
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="font-size-40 pv-20">{post.data.title}</div>
+          <div>
+            <Button
+              title="Edit Post"
+              uppercase={true}
+              color="gray"
+              onClick={() => history.push("/edit-post/" + post.data.id)}
+            />
+          </div>
+        </div>
         <div className="bg-white color-dark">
           <table className="post-table">
             <thead>

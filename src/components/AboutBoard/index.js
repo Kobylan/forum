@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { getTime } from "../getTime";
 import Button from "../Button";
-
+import { useHistory } from "react-router-dom";
 const AboutBoard = () => {
+  const history = useHistory();
   const board = useSelector((store) => store.board);
   return (
     !board.isFetching && (
@@ -28,6 +29,9 @@ const AboutBoard = () => {
               uppercase={true}
               color="gray"
               className="font-size-12 "
+              onClick={() =>
+                history.push("/create-post/" + board.data.board.id)
+              }
             />
           </div>
         </div>

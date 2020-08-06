@@ -33,7 +33,11 @@ const Tag = ({ category }) => {
             <Board board={board} />
           ))}
         </div>
-        <Link title="See more" className="font-weight-400 pb-10 pl-10" />
+        <Link
+          title="See more"
+          className="font-weight-400 pb-10 pl-10"
+          link={"/category/" + category.id}
+        />
       </div>
     </div>
   );

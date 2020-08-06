@@ -1,0 +1,13 @@
+.category-item {
+  width: 49%;
+  height: 60px;
+  background-color: #292929;
+}
+.category-item-left {
+  float: left;
+}
+.category-item-right {
+  float: right;
+}
+
+/*# sourceMappingURL=index.css.map */
