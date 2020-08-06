@@ -1,6 +1,10 @@
 .demo-editor {
   min-height: 250px !important;
-  background-color: #cccccc;
+  background-color: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 0 0 5px 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .comment-editor {
@@ -19,7 +23,6 @@
   fill: #fff;
 }
 .rdw-editor-wrapper .custom-tool {
-  margin-bottom: 6px;
   cursor: pointer;
 }
 .rdw-editor-wrapper .rdw-option-wrapper {
@@ -37,13 +40,34 @@
 }
 .rdw-editor-wrapper .rdw-option-active {
   box-shadow: none;
-  border: 1px solid #5f4aeb;
 }
 .rdw-editor-wrapper .rdw-block-dropdown {
   width: 123px;
 }
 .rdw-editor-wrapper .rdw-option-wrapper:hover {
   box-shadow: none;
+}
+
+.submit_btn {
+  width: 90px;
+  float: right;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  background-color: #767676;
+  margin-top: 10px;
+  border-radius: 3px;
+  align-self: flex-end;
+}
+.submit_btn:hover {
+  background-color: #9966ff;
+  color: white;
+}
+
+.create-post-title {
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
 }
 
 /*# sourceMappingURL=index.css.map */
