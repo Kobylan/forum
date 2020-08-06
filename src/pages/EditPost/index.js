@@ -19,8 +19,7 @@ import superscript from "../../assets/icons/superscript.svg";
 import image from "../../assets/icons/image.svg";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getPost } from "../../store/actions/Post";
-import { editPost } from "../../store/actions/EditPost";
+import { getPost, editPost } from "../../store/actions/Posts";
 const EditPost = () => {
   const { id } = useParams();
   const [editorState, setEditorState] = React.useState(

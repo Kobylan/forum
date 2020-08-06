@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Join, Leave } from "../../store/actions/JoinOrLeave";
+import { Join, Leave } from "../../store/actions/Board";
 
 const Board = ({ board, index }) => {
   const [subscribed, setSubscribed] = useState(board.is_subscribed);

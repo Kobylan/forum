@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
-import { getPost } from "../../store/actions/Post";
 import { getTime } from "../../components/getTime";
 import Icon from "../../components/Icon";
 import "./index.scss";
-import { Dislike, Like } from "../../store/actions/Reaction";
+import { DislikePost, LikePost, getPost } from "../../store/actions/Posts";
 import Commentaries from "../../components/Commentaries";
 import Button from "../../components/Button";
 const Board = () => {
@@ -62,7 +61,7 @@ const Board = () => {
           <div
             className="pr-15  d-flex color-dark-gray-opacity-5 align-items-center cursor-pointer"
             onClick={() => {
-              dispatch(Like(id, reaction, setReaction));
+              dispatch(LikePost(id, reaction, setReaction));
             }}
           >
             <Icon
@@ -79,7 +78,7 @@ const Board = () => {
           <div
             className="pr-15 d-flex color-dark-gray-opacity-5 align-items-center cursor-pointer"
             onClick={() => {
-              dispatch(Dislike(id, reaction, setReaction));
+              dispatch(DislikePost(id, reaction, setReaction));
             }}
           >
             <Icon
@@ -95,7 +94,7 @@ const Board = () => {
           </div>
           <div className="pr-15 d-flex color-dark-gray-opacity-5 align-items-center">
             <Icon name="comment" fill="rgba(204, 204, 204, 0.5)" size={15} />
-            <div className="mg-5">{post.data.comments.length} comments</div>
+            <div className="mg-5">{post.data.comments.length} commentaries</div>
           </div>
         </div>
         <div className="color-dark-gray-opacity-5 font-size-20 bb-1 b-color-gray-opacity-5 mt-20 pb-10">

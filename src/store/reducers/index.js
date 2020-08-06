@@ -6,6 +6,7 @@ import { postReducer } from "./Post";
 import { boardReducer } from "./Board";
 import { notificationsReducer } from "./Notifications";
 import { categoryReducer } from "./Category";
+import { commentariesReducer } from "./Commentaries";
 
 export const rootReducer = combineReducers({
   post: postReducer,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   board: boardReducer,
   notifications: notificationsReducer,
   category: categoryReducer,
+  commentaries: commentariesReducer,
 });

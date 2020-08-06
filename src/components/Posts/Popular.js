@@ -11,7 +11,10 @@ const Popular = () => {
   const posts = useSelector((store) => store.posts);
   return (
     <div>
-      {!posts.isFetching && posts.data.map((post) => <Card post={post} />)}
+      {!posts.isFetching &&
+        posts.data
+          .sort((a, b) => a.created < b.created)
+          .map((post) => <Card post={post} />)}
     </div>
   );
 };

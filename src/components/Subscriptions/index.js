@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Board from "./Board";
 import { useDispatch, useSelector } from "react-redux";
-import { getSubscriptions } from "../../store/actions/Subscriptions";
+import { getSubscriptions } from "../../store/actions/Board";
 import { useLocation } from "react-router-dom";
 const Subscriptions = () => {
   const dispatch = useDispatch();
