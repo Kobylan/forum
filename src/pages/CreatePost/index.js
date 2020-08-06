@@ -36,7 +36,7 @@ const Createpost = (boar_id, board_name) => {
   return (
     <div className="w-100 max-width-800">
       <div className="create-post-title font-size-28 ">Create post</div>
-      <div className="font-size-20 mb-20">{board_name}</div>
+      <div className="font-size-20 mb-20">placeholder</div>
       <div
         className="d-flex flex-column p-10 "
         style={{
