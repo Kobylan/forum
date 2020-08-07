@@ -9,11 +9,26 @@ import {
   DislikePost,
   LikePost,
   getPost,
-  deletePost,
+  addPost,
 } from "../../store/actions/Posts";
+import { Editor } from "react-draft-wysiwyg";
+import draftToHtml from "draftjs-to-html";
+import { convertToRaw, EditorState } from "draft-js";
+
+import {deletePost} from "../../store/actions/Posts";
 import Commentaries from "../../components/Commentaries";
+
 import Button from "../../components/Button";
 import Comment from "../../components/Comment";
+import bold from "../../assets/icons/bold.svg";
+import italic from "../../assets/icons/italic.svg";
+import strikethrough from "../../assets/icons/strikethrough.svg";
+import superscript from "../../assets/icons/superscript.svg";
+import unordered from "../../assets/icons/unordered.svg";
+import ordered from "../../assets/icons/ordered.svg";
+import link from "../../assets/icons/link.svg";
+import image from "../../assets/icons/image.svg";
+import { addCommentary } from "../../store/actions/Commentaries";
 const Board = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -26,6 +41,23 @@ const Board = () => {
   useEffect(() => {
     setReaction(post.data?.reaction);
   }, [post.data?.reaction]);
+  const [editorState, setEditorState] = React.useState(() =>
+    EditorState.createEmpty()
+  );
+  const [comment, setComment] = useState({
+    content: null,
+    post_id: parseInt(id),
+  });
+  const formatedContent = draftToHtml(
+    convertToRaw(editorState.getCurrentContent())
+  );
+  useEffect(() => setComment({ ...comment, content: formatedContent }), [
+    formatedContent,
+  ]);
+  console.log(comment);
+  const handleSendComment = () => {
+    dispatch(addCommentary(comment, id));
+  };
   return (
     !post.isFetching && (
       <div className="d-flex flex-column w-100">
@@ -110,8 +142,83 @@ const Board = () => {
             <div className="mg-5">{post.data.comments.length} commentaries</div>
           </div>
         </div>
+
         <div className="color-dark-gray-opacity-5 font-size-20 bb-1 b-color-gray-opacity-5 mt-20 pb-10">
           Commentaries
+        </div>
+        <div className="mt-20 color-darko">
+          <Editor
+            editorState={editorState}
+            onEditorStateChange={setEditorState}
+            toolbarClassName="demo-toolbar-absolute"
+            wrapperClassName="demo-wrapper"
+            editorClassName="demo-editor"
+            placeholder="New comment"
+            toolbar={{
+              options: ["inline", "fontSize", "list", "link", "blockType"],
+              inline: {
+                options: ["bold", "italic", "strikethrough", "superscript"],
+                bold: { icon: bold, className: undefined },
+                italic: { icon: italic, className: undefined },
+                strikethrough: { icon: strikethrough, className: undefined },
+                superscript: { icon: superscript, className: undefined },
+              },
+              fontSize: {
+                options: [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  14,
+                  16,
+                  18,
+                  24,
+                  30,
+                  36,
+                  48,
+                  60,
+                  72,
+                  96,
+                ],
+                className: undefined,
+                component: undefined,
+                dropdownClassName: undefined,
+              },
+              list: {
+                options: ["unordered", "ordered"],
+                unordered: { icon: unordered, className: undefined },
+                ordered: { icon: ordered, className: undefined },
+              },
+              link: {
+                options: ["link"],
+                link: { icon: link, className: undefined },
+              },
+              blockType: {
+                inDropdown: true,
+                options: [
+                  "Normal",
+                  "H1",
+                  "H2",
+                  "H3",
+                  "H4",
+                  "H5",
+                  "H6",
+                  "Blockquote",
+                  "Code",
+                ],
+                className: undefined,
+                component: undefined,
+                dropdownClassName: undefined,
+              },
+            }}
+          />
+          <a
+            className="post-table-comment_btn text-align-center p-10 cursor-pointer"
+            onClick={() => handleSendComment()}
+          >
+            Add Comment
+          </a>
         </div>
         {post.data.comments.length > 0 ? (
           post.data.comments.map((e) => <Comment comment={e} />)

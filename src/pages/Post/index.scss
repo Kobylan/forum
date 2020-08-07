@@ -24,4 +24,19 @@
     border-top: solid 1px rgba(0, 0, 0, 0.1);
     border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   }
+  &-comment_btn {
+    width: 150px;
+    float: right;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: #767676;
+    border-radius: 3px;
+    align-self: flex-end;
+    &:hover {
+      background-color: #9966ff;
+      color: white;
+    }
+  }
 }
