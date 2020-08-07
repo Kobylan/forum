@@ -25,5 +25,20 @@
   border-top: solid 1px rgba(0, 0, 0, 0.1);
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
+.post-table-comment_btn {
+  width: 150px;
+  float: right;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: #767676;
+  border-radius: 3px;
+  align-self: flex-end;
+}
+.post-table-comment_btn:hover {
+  background-color: #9966ff;
+  color: white;
+}
 
 /*# sourceMappingURL=index.css.map */

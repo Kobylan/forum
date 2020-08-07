@@ -1,4 +1,5 @@
 import { URI } from "../../URI";
+import { getPost } from "../Posts";
 
 export const getCommentaries = (id) => {
   return (dispatch) => {
@@ -19,14 +20,22 @@ export const getCommentaries = (id) => {
   };
 };
 
-export const addCommentary = (content, history) => {
-  fetch(URI + "/api/v1/posts", {
-    method: "POST",
-    body: JSON.stringify(content),
-  })
-    .then((response) => response.json())
-    .then((id) => history.push("/post/" + id))
-    .catch((err) => console.log(err));
+export const addCommentary = (content, post) => {
+  return (dispatch) =>
+    fetch(URI + "/api/v1/comments", {
+      method: "POST",
+      body: JSON.stringify(content),
+    })
+      .then(() => dispatch(getPost(post)))
+      .catch((err) => console.log(err));
+};
+export const deleteCommentary = (id, post) => {
+  return (dispatch) =>
+    fetch(URI + "/api/v1/comments/" + id, {
+      method: "DELETE",
+    })
+      .then(() => dispatch(getPost(post)))
+      .catch((err) => console.log(err));
 };
 
 export const editCommentary = (content, history) => {
