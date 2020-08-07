@@ -5,7 +5,12 @@ import ReactHtmlParser from "react-html-parser";
 import { getTime } from "../../components/getTime";
 import Icon from "../../components/Icon";
 import "./index.scss";
-import { DislikePost, LikePost, getPost } from "../../store/actions/Posts";
+import {
+  DislikePost,
+  LikePost,
+  getPost,
+  deletePost,
+} from "../../store/actions/Posts";
 import Commentaries from "../../components/Commentaries";
 import Button from "../../components/Button";
 import Comment from "../../components/Comment";
@@ -26,12 +31,19 @@ const Board = () => {
       <div className="d-flex flex-column w-100">
         <div className="d-flex justify-content-between align-items-center">
           <div className="font-size-40 pv-20">{post.data.title}</div>
-          <div>
+          <div className="d-flex">
             <Button
               title="Edit Post"
               uppercase={true}
               color="gray"
               onClick={() => history.push("/edit-post/" + post.data.id)}
+            />
+            <Button
+              title="Delete post"
+              uppercase={true}
+              color="red"
+              className="ml-15"
+              onClick={() => deletePost(post.data.id, history)}
             />
           </div>
         </div>

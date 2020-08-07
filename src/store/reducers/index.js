@@ -23,5 +23,4 @@ export const rootReducer = combineReducers({
   myComments: myCommentsReducer,
   myPost: myPostReducer,
   commentaries: commentariesReducer,
-
 });

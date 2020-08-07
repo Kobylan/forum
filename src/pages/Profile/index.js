@@ -14,11 +14,9 @@ const Profile = () => {
   const comments = useSelector((store) => store.myComments);
   const posts = useSelector((store) => store.myPost);
   useEffect(() => {
-    dispatch(getProfile());
     dispatch(getMyComments());
     dispatch(getMyPosts());
   }, []);
-  console.log(comments, posts);
   return (
     !profileData.isFetching && (
       <div className="w-100 d-flex flex-column">
