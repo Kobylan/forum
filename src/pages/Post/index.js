@@ -14,6 +14,10 @@ import {
 import { Editor } from "react-draft-wysiwyg";
 import draftToHtml from "draftjs-to-html";
 import { convertToRaw, EditorState } from "draft-js";
+
+import {deletePost} from "../../store/actions/Posts";
+import Commentaries from "../../components/Commentaries";
+
 import Button from "../../components/Button";
 import Comment from "../../components/Comment";
 import bold from "../../assets/icons/bold.svg";
@@ -59,12 +63,19 @@ const Board = () => {
       <div className="d-flex flex-column w-100">
         <div className="d-flex justify-content-between align-items-center">
           <div className="font-size-40 pv-20">{post.data.title}</div>
-          <div>
+          <div className="d-flex">
             <Button
               title="Edit Post"
               uppercase={true}
               color="gray"
               onClick={() => history.push("/edit-post/" + post.data.id)}
+            />
+            <Button
+              title="Delete post"
+              uppercase={true}
+              color="red"
+              className="ml-15"
+              onClick={() => deletePost(post.data.id, history)}
             />
           </div>
         </div>

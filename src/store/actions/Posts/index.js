@@ -121,3 +121,9 @@ export const DislikePost = (id, userReaction, setReaction) => {
     });
   };
 };
+
+export const deletePost = (id, history) => {
+  fetch(URI + "/api/v1/posts/" + id, {
+    method: "DELETE",
+  }).then(() => history.push("/"));
+};

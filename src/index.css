@@ -513,6 +513,16 @@ body {
   border-radius: 2px;
   text-align: center;
 }
+.button-filled__red {
+  background-color: #cc0044;
+  color: #cccccc;
+  padding: 15px;
+  font-size: 12px;
+  font-family: "IBM Plex Mono", monospace;
+  width: 225px;
+  border-radius: 2px;
+  text-align: center;
+}
 
 .line-height-1 {
   line-height: 1;

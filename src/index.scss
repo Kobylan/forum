@@ -620,6 +620,16 @@ body {
       border-radius: 2px;
       text-align: center;
     }
+    &__red {
+      background-color: rgb(204, 0, 68);
+      color: rgb(204, 204, 204);
+      padding: 15px;
+      font-size: 12px;
+      font-family: "IBM Plex Mono", monospace;
+      width: 225px;
+      border-radius: 2px;
+      text-align: center;
+    }
   }
 }
 
